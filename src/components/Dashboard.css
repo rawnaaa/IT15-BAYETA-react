@@ -127,3 +127,500 @@ td { padding: 16px 12px; border-bottom: 1px solid #334155; }
       grid-template-columns: 1fr;
     }
   }
+
+
+
+  .sidebar-nav a {
+  text-decoration: none;
+  color: #a0aec0;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* NavLink automatically adds the .active class when clicked */
+.sidebar-nav a.active {
+  background-color: #2d3748; /* Darker grey/blue */
+  color: #63b3ed; /* Light blue text */
+}
+
+
+
+
+/* Analytics Specific Styles */
+.analytics-header {
+  margin-bottom: 30px;
+}
+
+.analytics-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px !important;
+}
+
+.card-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.visual-stat {
+  position: relative;
+  margin: 20px 0;
+}
+
+.progress-ring {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-ring svg {
+  transform: rotate(-90deg);
+}
+
+.ring-bg {
+  fill: none;
+  stroke: #1e293b;
+  stroke-width: 8;
+}
+
+.ring-fill {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+
+/* Colors matching your Lovebirds theme */
+.ring-fill.growth {
+  stroke: #63b3ed;
+  stroke-dasharray: 251;
+  stroke-dashoffset: 190; /* 24% of 251 */
+}
+
+.ring-fill.engagement {
+  stroke: #4fd1c5;
+  stroke-dasharray: 251;
+  stroke-dashoffset: 30; /* 88% of 251 */
+}
+
+.percentage {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.stat-desc {
+  color: #8b949e;
+  font-size: 0.85rem;
+  margin-top: 10px;
+}
+
+.trend.positive {
+  color: #48bb78;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+
+
+
+/* overview */
+/* Container Spacing */
+.overview-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Header Styling */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.export-btn {
+  background: #1e293b;
+  color: #63b3ed;
+  border: 1px solid #30363d;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+
+.export-btn:hover {
+  background: #63b3ed;
+  color: #0d1117;
+}
+
+/* Section Header Alignment (Fixes the View All position) */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.view-all-btn {
+  background: transparent;
+  color: #8b949e;
+  border: 1px solid #30363d;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect: Turns Blue */
+.view-all-btn:hover {
+  color: #63b3ed;
+  border-color: #63b3ed;
+  background: rgba(99, 179, 237, 0.05);
+}
+
+/* Modern Stat Cards */
+.stat-card.modern {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.stat-icon-bg {
+  background: rgba(99, 179, 237, 0.1);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+.trend-pill {
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.trend-pill.pos { background: rgba(72, 187, 120, 0.15); color: #48bb78; }
+.trend-pill.neg { background: rgba(245, 101, 101, 0.15); color: #f56565; }
+
+/* Table Improvements */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  background: #2d3748;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #63b3ed;
+  border: 1px solid #30363d;
+}
+
+.amount-cell {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #fff;
+}
+
+.action-dot-btn {
+  background: none;
+  border: none;
+  color: #8b949e;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.action-dot-btn:hover { color: #fff; }
+.text-right { text-align: right; }
+
+
+
+
+
+/* Messages Container */
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.message-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual Message Card */
+.message-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.message-card:hover {
+  background: #1c2128;
+  transform: translateX(5px);
+}
+
+.message-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+/* User Avatar with Status */
+.user-avatar-large {
+  width: 48px;
+  height: 48px;
+  background: #2d3748;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #63b3ed;
+  position: relative;
+  font-size: 1rem;
+}
+
+.online-status {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 12px;
+  height: 12px;
+  background: #48bb78;
+  border: 2px solid #161b22;
+  border-radius: 50%;
+}
+
+/* Text Content */
+.message-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.message-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sender-name {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.message-time {
+  color: #8b949e;
+  font-size: 0.75rem;
+}
+
+.message-preview {
+  color: #8b949e;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Settings Layout */
+.settings-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.settings-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.settings-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.card-header-simple {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 15px;
+}
+
+.card-header-simple h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #fff;
+}
+
+/* Form Styling */
+.input-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  color: #8b949e;
+  font-size: 0.85rem;
+}
+
+.modern-input {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.modern-input:focus {
+  border-color: #63b3ed;
+}
+
+/* Toggle Switch Styling */
+.option-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.option-info span {
+  display: block;
+  color: #fff;
+  font-weight: 500;
+}
+
+.option-info p {
+  color: #8b949e;
+  font-size: 0.8rem;
+  margin: 4px 0 0 0;
+}
+
+/* The Switch Slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 22px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #2d3748;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px; width: 16px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider { background-color: #63b3ed; }
+input:checked + .slider:before { transform: translateX(22px); }
+
+/* Buttons */
+.settings-footer {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.save-btn-primary {
+  background: #63b3ed;
+  color: #0d1117;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.save-btn-primary:hover {
+  background: #4299e1;
+}
+
+.cancel-btn {
+  background: transparent;
+  color: #8b949e;
+  border: 1px solid #30363d;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cancel-btn:hover {
+  color: #f56565;
+  border-color: #f56565;
+}

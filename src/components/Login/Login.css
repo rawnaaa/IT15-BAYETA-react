@@ -1,100 +1,111 @@
 .login-container {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-    font-family: 'Inter', sans-serif;
-  }
-  
-  /* Left Side: Illustration Area */
-  .login-illustration {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-  }
-  
-  .login-illustration img {
-    width: 70%;
-    height: auto;
-  }
-  
-  /* Right Side: Blue Background */
-  .login-form-section {
-    flex: 1;
-    background-color: #007bff; /* Bright Blue */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* The White Card */
-  .login-card {
-    background: white;
-    padding: 45px;
-    border-radius: 20px;
-    width: 80%;
-    max-width: 400px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  }
-  
-  .login-card h2 {
-    margin: 0;
-    font-size: 2rem;
-    font-weight: 700;
-  }
-  
-  .subtitle {
-    color: #888;
-    margin-bottom: 30px;
-  }
-  
-  /* Rounded "Pill" Inputs */
-  .input-field {
-    display: flex;
-    align-items: center;
-    border: 1px solid #e0e0e0;
-    border-radius: 50px;
-    padding: 12px 20px;
-    margin-bottom: 15px;
-    background-color: #fcfcfc;
-  }
-  
-  .input-field input {
-    border: none;
-    outline: none;
-    flex: 1;
-    padding-left: 10px;
-    font-size: 0.95rem;
-  }
-  
-  .icon {
-    color: #aaa;
-  }
-  
-  /* The Blue Login Button */
-  .login-button {
-    width: 100%;
-    padding: 14px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background 0.3s;
-  }
-  
-  .login-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .forgot-pass {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-    text-decoration: none;
-    color: #888;
-    font-size: 0.85rem;
-  }
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0d1117; 
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.sliding-bg {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #161b22; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: 1;
+  border-left: 1px solid #30363d;
+  border-right: 1px solid #30363d;
+}
+
+.at-right { transform: translateX(100%); }
+.at-left { transform: translateX(0%); }
+
+.form-holder {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.left-side { left: 0; }
+.right-side { right: 0; }
+
+.fade-in { opacity: 1; transform: translateY(0); pointer-events: all; }
+.fade-out { opacity: 0; transform: translateY(20px); pointer-events: none; }
+
+/* Branding Styles - Swapped to Finance Blue */
+.brand-circle {
+  width: 100px;
+  height: 100px;
+  background: #1e293b;
+  border: 2px solid #63b3ed;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 20px rgba(99, 179, 237, 0.2);
+}
+
+.brand-icon { font-size: 2.5rem; }
+.brand-name { color: #63b3ed; font-size: 2.8rem; margin: 0; text-align: center; font-weight: 700; letter-spacing: -1px; }
+.brand-tagline { color: #8b949e; font-size: 1rem; text-align: center; margin: 15px 40px 0; line-height: 1.5; max-width: 300px; }
+
+.login-card {
+  background: #161b22;
+  padding: 40px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 360px;
+  border: 1px solid #30363d;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.login-card h2 { color: #63b3ed; margin-bottom: 8px; }
+.subtitle { color: #8b949e; margin-bottom: 25px; font-size: 0.9rem; }
+
+.input-field {
+  display: flex;
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 15px;
+}
+
+.input-field input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  outline: none;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #1e293b;
+  color: #63b3ed;
+  border: 1px solid #2d3748;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.login-button:hover { background-color: #63b3ed; color: #0d1117; }
+.text-link { background: none; border: none; color: #8b949e; margin-top: 20px; cursor: pointer; font-size: 0.85rem; }
+.text-link:hover { color: #63b3ed; text-decoration: underline; }

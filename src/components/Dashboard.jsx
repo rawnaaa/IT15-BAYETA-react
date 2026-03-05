@@ -1,20 +1,17 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Added for navigation
+import { useNavigate, Routes, Route, NavLink } from 'react-router-dom';
 import './Dashboard.css';
 
-
+// Import your sub-components
+import Overview from './sidebars/Overview';
+import Analytics from './sidebars/Analytics';
+import Messages from './sidebars/Messages';
+import Settings from './sidebars/Settings';
 
 const Dashboard = () => {
-  const navigate = useNavigate(); // Initialize the navigate function
-
-  const stats = [
-    { label: 'Total Users', value: '1,284', change: '+12%' },
-    { label: 'Active Sessions', value: '432', change: '+5%' },
-    { label: 'Pending Requests', value: '18', change: '-2%' },
-  ];
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Redirects user back to the login page (path "/")
     navigate('/'); 
   };
 
@@ -22,17 +19,17 @@ const Dashboard = () => {
     <div className="dashboard-container">
       {/* Sidebar */}
       <aside className="sidebar">
-        <div className="sidebar-logo">Lovebirds</div>
+        <div className="sidebar-logo">DataPulse</div>
         <nav className="sidebar-nav">
           <ul>
-            <li className="active">Overview</li>
-            <li>Analytics</li>
-            <li>Messages</li>
-            <li>Settings</li>
+            {/* end prop ensures 'Overview' isn't always highlighted */}
+            <li><NavLink to="/dashboard" end>Overview</NavLink></li>
+            <li><NavLink to="/dashboard/analytics">Analytics</NavLink></li>
+            <li><NavLink to="/dashboard/messages">Messages</NavLink></li>
+            <li><NavLink to="/dashboard/settings">Settings</NavLink></li>
           </ul>
         </nav>
         <div className="sidebar-footer">
-          {/* Added the click handler here */}
           <button className="btn-logout" onClick={handleLogout}>Logout</button>
         </div>
       </aside>
@@ -40,55 +37,22 @@ const Dashboard = () => {
       {/* Main Content */}
       <main className="main-content">
         <header className="content-header">
-          <h1>Dashboard Overview</h1>
+          {/* This title can be dynamic or static */}
+          <h1>Dashboard</h1> 
           <div className="user-profile">
             <span>David Brooks</span>
             <div className="avatar">DB</div>
           </div>
         </header>
 
-        {/* Stat Cards */}
-        <section className="stats-grid">
-          {stats.map((stat, index) => (
-            <div key={index} className="stat-card">
-              <p className="stat-label">{stat.label}</p>
-              <h2 className="stat-value">{stat.value}</h2>
-              <span className={`stat-change ${stat.change.includes('+') ? 'pos' : 'neg'}`}>
-                {stat.change} from last month
-              </span>
-            </div>
-          ))}
-        </section>
-
-        {/* Data Table Area */}
-        <section className="recent-activity">
-          <h3>Recent Activity</h3>
-          <div className="table-wrapper">
-            <table>
-              <thead>
-                <tr>
-                  <th>User</th>
-                  <th>Status</th>
-                  <th>Date</th>
-                  <th>Amount</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Sarah Jenkins</td>
-                  <td><span className="status-pill active">Active</span></td>
-                  <td>Oct 24, 2023</td>
-                  <td>$120.00</td>
-                </tr>
-                <tr>
-                  <td>Michael Ross</td>
-                  <td><span className="status-pill pending">Pending</span></td>
-                  <td>Oct 23, 2023</td>
-                  <td>$45.00</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        {/* THIS IS THE ENGINE: It swaps content based on the URL */}
+        <section className="content-area">
+          <Routes>
+            <Route path="/" element={<Overview />} />
+            <Route path="analytics" element={<Analytics />} />
+            <Route path="messages" element={<Messages />} />
+            <Route path="settings" element={<Settings />} />
+          </Routes>
         </section>
       </main>
     </div>
