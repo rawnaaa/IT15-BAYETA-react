@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // 1. Import this
 import './Login.css';
 
 const Login = () => {
-  // 1. Define state to hold typing data
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // 2. Initialize the hook
 
   const handleLogin = (e) => {
     e.preventDefault();
     console.log("Submitted:", { email, password });
-    alert("Check the console to see your typed data!");
+    
+    // 3. Instead of just an alert, navigate to the dashboard path
+    navigate('/dashboard'); 
   };
 
   return (
